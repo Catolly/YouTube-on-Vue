@@ -1,0 +1,154 @@
+[
+	{
+		"id": 0,
+		"items": [
+			{
+				"id": 0,
+				"title": "Главная",
+				"icon": "icons/Home_Icon.svg",
+				"isActive": true
+			},
+			{
+				"id": 1,
+				"title": "В тренде",
+				"icon": "icons/Trending_Icon.svg"
+			},
+			{
+				"id": 2,
+				"title": "Подписки",
+				"icon": "icons/Subscriptions_Icon.svg"
+			}
+		]
+	},
+	{
+		"id": 1,
+		"items": [
+			{
+				"id": 0,
+				"title": "Библиотека",
+				"icon": "icons/Library_Icon.svg"
+			},
+			{
+				"id": 1,
+				"title": "История",
+				"icon": "icons/History_Icon.svg"
+			},
+			{
+				"id": 2,
+				"title": "Смотреть позже",
+				"icon": "icons/Watch_Later_Icon.svg"
+			},
+			{
+				"id": 3,
+				"title": "Понравившиеся",
+				"icon": "icons/Liked_Videos_Icon.svg"
+			},
+			{
+				"id": 4,
+				"title": "Happy Wheels",
+				"icon": "icons/Library_Playlist_Icon.svg"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"title": "Подписки",
+		"items": [
+			{
+				"id": 0,
+				"title": "Kuplinov ► Play",
+				"icon": "img/Sidebar_Channel_0.jpg",
+				"newness": true
+			},
+			{
+				"id": 1,
+				"title": "SpecterChannel",
+				"icon": "img/Sidebar_Channel_1.jpg",
+				"newness": true
+			},
+			{
+				"id": 2,
+				"title": "Данила Поперечный",
+				"icon": "img/Sidebar_Channel_2.jpg",
+				"newness": true
+			},
+			{
+				"id": 3,
+				"title": "BadComedian",
+				"icon": "img/Sidebar_Channel_3.jpg"
+			},
+			{
+				"id": 4,
+				"title": "Руслан Усачев",
+				"icon": "img/Sidebar_Channel_4.jpg"
+			},
+			{
+				"id": 5,
+				"title": "HIMA",
+				"icon": "img/Sidebar_Channel_5.jpg",
+				"newness": true
+			},
+			{
+				"id": 6,
+				"title": "SNAILKICK",
+				"icon": "img/Sidebar_Channel_6.jpg"
+			},
+			{
+				"id": 7,
+				"title": "Показать еще 11 каналов",
+				"icon": "icons/Show_More_Channels_Icon.svg"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"title": "Другие возможности",
+		"items": [
+			{
+				"id": 0,
+				"title": "YouTube Premium",
+				"icon": "icons/YouTube_Premium_Icon.svg"
+			},
+			{
+				"id": 1,
+				"title": "Фильмы",
+				"icon": "icons/Movies_Icon.svg"
+			},
+			{
+				"id": 2,
+				"title": "Видеоигры",
+				"icon": "icons/Gaming_Icon.svg"
+			},
+			{
+				"id": 3,
+				"title": "Трансляции",
+				"icon": "icons/Live_Icon.svg"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"items": [
+			{
+				"id": 0,
+				"title": "Настройки",
+				"icon": "icons/Settings_Icon.svg"
+			},
+			{
+				"id": 1,
+				"title": "Жалобы",
+				"icon": "icons/Report_History_Icon.svg"
+			},
+			{
+				"id": 2,
+				"title": "Справка",
+				"icon": "icons/Help_Icon.svg"
+			},
+			{
+				"id": 3,
+				"title": "Отправить отзыв",
+				"icon": "icons/Send_Feedback_Icon.svg"
+			}
+		]
+	}
+]

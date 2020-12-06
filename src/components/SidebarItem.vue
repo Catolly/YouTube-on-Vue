@@ -1,15 +1,23 @@
 <template>
 	<li 
-	class="section-item" 
-	:class="{'active' : isActive}">
+	:class="{'active' : isActive}"
+	class="section-item">
 		<a 
-		class="item-endpoint"
-		:href="link">
+		:href="link"
+		class="item-endpoint">
 			<span 
-			class="item-icon"
-			:style="`-webkit-mask-image: url(${icon})`">
+			v-if="icon.match('.svg')"
+			:style="`-webkit-mask-image: url(${icon})`"
+			class="item-icon">
 			</span>
+			<img 
+			v-else
+			:src="icon"
+			class="item-icon round">
 			<span class="item-title">{{title}}</span>
+			<div 
+			v-if="newness"
+			class="newness-dot round"></div>
 		</a>
 	</li>
 </template>
@@ -26,6 +34,10 @@
 			isActive: {
 				type: Boolean,
 				default: false 
+			},
+			newness: {
+				type: Boolean,
+				default: false
 			}
 		}
 	}
@@ -69,6 +81,10 @@
 .item-title {
 	font-size: 14px;
 	color: @section-item-title;
+
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .item-icon {
@@ -82,7 +98,24 @@
 }
 
 .item-title {
+	
+}
 
+.round {
+	border-radius: 50%;
+}
+
+.newness-dot {
+	height: 4px;
+	width: 4px;
+	background-color: @section-item-newness-dot;
+	margin: 0 6px;
+}
+
+@media (min-width: 876px) {
+	.item-title {
+		width: calc(192px - 64px);
+	}
 }
 
 </style>

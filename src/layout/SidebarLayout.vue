@@ -10,7 +10,11 @@
 					</div>
 					<div id="inner-content">
 						<div id="sections">
-							<sidebar-section></sidebar-section>
+							<sidebar-section 
+							v-for="section in sections"
+							:key="section.id"
+							:title="section.title"
+							:items="section.items"></sidebar-section>
 						</div>
 					</div>
 				</div>
@@ -21,10 +25,16 @@
 
 <script>	
 	import SidebarSection from '../components/SidebarSection'
+	import sectionsData from '../data/sidebar_sections.json'
 	export default {
 		name: 'SidebarLayout',
 		components: {
 			SidebarSection
+		},
+		computed: {
+			sections: function() {
+				return sectionsData //getting data method
+			}
 		}
 	}
 </script>
@@ -48,6 +58,7 @@
 
 #sidebar-wrapper {
 	width: 240px;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
@@ -70,7 +81,7 @@
 }
 
 #sections {
-
+	overflow: auto;
 }
 
 </style>
