@@ -1,0 +1,106 @@
+[
+	{
+		"id": 0,
+		"title": "Kuplinov ► Play",
+		"icon": "img/Sidebar_Channel_0.jpg",
+		"link": "https://www.youtube.com/channel/UCIoQzf1hBYEFuYW5C8eICag",
+		"newness": true
+	},
+	{
+		"id": 1,
+		"title": "SpecterChannel",
+		"icon": "img/Sidebar_Channel_1.jpg",
+		"link": "https://www.youtube.com/channel/UCdKuE7a2QZeHPhDntXVZ91w",
+		"newness": true
+	},
+	{
+		"id": 2,
+		"title": "Данила Поперечный",
+		"icon": "img/Sidebar_Channel_2.jpg",
+		"link": "https://www.youtube.com/channel/UCR-Hcwi27-Ee6VnGzmxE1pA",
+		"newness": true
+	},
+	{
+		"id": 3,
+		"title": "BadComedian",
+		"icon": "img/Sidebar_Channel_3.jpg",
+		"link": "https://www.youtube.com/channel/UC6cqazSR6CnVMClY0bJI0Lg"
+	},
+	{
+		"id": 4,
+		"title": "Руслан Усачев",
+		"icon": "img/Sidebar_Channel_4.jpg",
+		"link": "https://www.youtube.com/channel/UCDaIW2zPRWhzQ9Hj7a0QP1w"
+	},
+	{
+		"id": 5,
+		"title": "HIMA",
+		"icon": "img/Sidebar_Channel_5.jpg",
+		"link": "https://www.youtube.com/channel/UCCh8YfzvyPHugM0lkeQy54A",
+		"newness": true
+	},
+	{
+		"id": 6,
+		"title": "SNAILKICK",
+		"icon": "img/Sidebar_Channel_6.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q"
+	},
+	{
+		"id": 7,
+		"title": "Сыендук",
+		"icon": "img/Sidebar_Channel_7.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q",
+		"newness": true
+	},
+	{
+		"id": 8,
+		"title": "Hacksmith Industries",
+		"icon": "img/Sidebar_Channel_8.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q"
+	},
+	{
+		"id": 9,
+		"title": "Jared Dines",
+		"icon": "img/Sidebar_Channel_9.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q",
+		"newness": true
+	},
+	{
+		"id": 10,
+		"title": "Frostbitt",
+		"icon": "img/Sidebar_Channel_10.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q",
+		"newness": true
+	},
+	{
+		"id": 11,
+		"title": "Kharma Medic",
+		"icon": "img/Sidebar_Channel_11.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q",
+		"newness": true
+	},
+	{
+		"id": 12,
+		"title": "Игорь Войтенко",
+		"icon": "img/Sidebar_Channel_12.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q"
+	},
+	{
+		"id": 13,
+		"title": "TheNafig",
+		"icon": "img/Sidebar_Channel_13.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q"
+	},
+	{
+		"id": 14,
+		"title": "StolenGooseProd",
+		"icon": "img/Sidebar_Channel_14.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q"
+	},
+	{
+		"id": 15,
+		"title": "Антон Птушкин",
+		"icon": "img/Sidebar_Channel_15.jpg",
+		"link": "https://www.youtube.com/channel/UCdu1AosJcTPsQYFolNHki8Q"
+	}
+]

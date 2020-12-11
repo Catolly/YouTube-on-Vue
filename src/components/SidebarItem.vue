@@ -31,6 +31,10 @@
 				type: String,
 				default: '#'
 			},
+			type: {
+				type: String,
+				default: ''
+			},
 			isActive: {
 				type: Boolean,
 				default: false 
@@ -71,7 +75,7 @@
 .item-endpoint {
 	height: 40px;
 	width: 100%;
-	padding: 0 24px;
+	padding: 0 30px 0 24px;
 
 	text-decoration: none;
 	display: flex;
@@ -85,6 +89,8 @@
 	white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    max-width: 66%;
 }
 
 .item-icon {
@@ -97,10 +103,6 @@
 	background-color: @main-icon-color;
 }
 
-.item-title {
-	
-}
-
 .round {
 	border-radius: 50%;
 }
@@ -108,14 +110,9 @@
 .newness-dot {
 	height: 4px;
 	width: 4px;
+	max-width: 4px;
 	background-color: @section-item-newness-dot;
-	margin: 0 6px;
-}
-
-@media (min-width: 876px) {
-	.item-title {
-		width: calc(192px - 64px);
-	}
+	margin-left: auto;
 }
 
 </style>
