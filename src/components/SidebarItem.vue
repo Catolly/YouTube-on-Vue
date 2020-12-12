@@ -90,7 +90,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    max-width: 66%;
+    max-width: 70%;
+    display: inline-block;
+    margin-right: -6px;
 }
 
 .item-icon {
@@ -110,7 +112,6 @@
 .newness-dot {
 	height: 4px;
 	width: 4px;
-	max-width: 4px;
 	background-color: @section-item-newness-dot;
 	margin-left: auto;
 }

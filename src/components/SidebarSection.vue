@@ -82,11 +82,6 @@
 	padding: 12px 0;
 }
 
-.section-items {
-	margin: 0;
-	width: calc(100%+8px);
-}
-
 .section-title {
 	color: @section-text-secondary;
 	font-size: 14px;
