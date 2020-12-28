@@ -71,7 +71,7 @@
 </script>
 
 <style lang="less">
-@import '../colors.less';
+@import '../_colors.less';
 
 .section {
 	padding: 8px 0;

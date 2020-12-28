@@ -13,11 +13,11 @@
 			<img 
 			v-else
 			:src="icon"
-			class="item-icon round">
+			class="item-img">
 			<span class="item-title">{{title}}</span>
 			<div 
 			v-if="newness"
-			class="newness-dot round"></div>
+			class="newness-dot"></div>
 		</a>
 	</li>
 </template>
@@ -48,28 +48,26 @@
 </script>
 
 <style lang="less" scoped>
-@import '../colors.less';
+@import '../_colors.less';
+@import '../_mixins.less';
 
 .section-item {
 	display: flex;
 	align-items: center;
-}
 
-.section-item:hover {
-	background-color: @section-item-bg-color;
-}
-
-.section-item.active {
-	font-weight: 500;
-	background-color: @section-item-bg-color-active;
-}
-
-.section-item.active:hover {
-	background-color: @section-item-bg-color-active-hover;
-}
-
-.section-item.active .item-icon {
-	background-color: @section-item-icon-active;
+	&:hover {
+		background-color: @section-item-bg-color;
+	}
+	&.active {
+		font-weight: 500;
+		background-color: @section-item-bg-color-active;
+	}
+	&.active:hover {
+		background-color: @section-item-bg-color-active-hover;
+	}
+	&.active .item-icon {
+		background-color: @section-item-icon-active;
+	}
 }
 
 .item-endpoint {
@@ -95,18 +93,21 @@
     margin-right: -6px;
 }
 
-.item-icon {
+.item-icon,
+.item-img {
 	display: inline-block;
 
 	width: 24px;
 	height: 24px;
 	margin-right: 24px;
+}
 
+.item-icon {
 	background-color: @main-icon-color;
 }
 
-.round {
-	border-radius: 50%;
+.item-img {
+	.round();
 }
 
 .newness-dot {
@@ -114,6 +115,8 @@
 	width: 4px;
 	background-color: @section-item-newness-dot;
 	margin-left: auto;
+	margin-right: -8px;
+	.round();
 }
 
 </style>

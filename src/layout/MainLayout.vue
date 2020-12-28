@@ -14,11 +14,21 @@
     components: {
       HeaderLayout,
       SidebarLayout
-    }
+    },
+    // data() {
+    //   return {
+    //     sidebarHidden: true
+    //   }
+    // }
+    // methods: {
+    //   hideSidebar() {
+    //     this.sidebarHidden = false
+    //   }
+    // }
   }
 </script>
 
 
 <style>
-  
+
 </style>

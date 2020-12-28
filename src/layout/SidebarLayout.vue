@@ -65,7 +65,8 @@
 </script>
 
 <style lang="less" scoped>	
-@import '../colors.less';
+@import '../_colors.less';
+@sidebar-width: 240px;
 
 #sidebar {
 	z-index: 2005;
@@ -80,8 +81,12 @@
 	width: fit-content;
 }
 
+#sidebar.hidden {
+	left: -@sidebar-width;
+}
+
 #sidebar-wrapper {
-	width: 248px;
+	width: @sidebar-width;
 	display: flex;
 	flex-direction: column;
 }

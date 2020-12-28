@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="header">
-      <nav id="header__nav">
+      <nav id="nav">
         <div class="start">
           <div id="header__menu-toggle-wrap">
             <div id="header__menu-toggle">
@@ -78,7 +78,7 @@
 
 
 <style lang="less" scoped>
-@import '../colors.less';
+@import '../_colors.less';
 
 #header {
   height: 56px;
@@ -86,28 +86,28 @@
   z-index: 2020;
 }
 
-#header__nav {
+#nav {
   height: inherit;
 
   display: flex;
   justify-content: space-between;
 }
 
-#header__nav .start,
-#header__nav .center,
-#header__nav .end {
+#nav .start,
+#nav .center,
+#nav .end {
   display: flex;
   align-items: center;
   align-self: center;
   height: fit-content;
 }
 
-#header__nav .center {
+#nav .center {
   flex: 0 1 728px;
   justify-content: center;
 }
 
-#header__nav .end {
+#nav .end {
   justify-content: flex-end;
 }
 
