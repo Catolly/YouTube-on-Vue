@@ -13,52 +13,42 @@
           <div class="details">
             <div class="metadata-line">
               <span>
-                {{
-                  this.formateWithSpaces(video.views)
-                }} просмотров
+                {{this.formatWithSpaces(video.views)}} просмотров
               </span>
               <span>{{video.uploadDate}}</span>
             </div>
             <div class="menu-container">
               <div class="menu">
-                <button 
-                @click="() => { 
-                  if (!this.liked) {
-                    this.video.likes++
-                    if(this.disliked)
-                      this.video.dislikes--
-                    this.liked = true
-                    this.disliked = false
-                  }
-                }"
-                :class="{'active': this.liked}"
-                class="toggle-like">
-                  <span class="like-img-wrapper">
-                    <span class="like-img"></span>
-                  </span>
-                  <span class="likes">
-                    {{video.likes}}
-                  </span>
-                </button>
-                <button 
-                @click="() => { 
-                  if (!this.disliked) {
-                    this.video.dislikes++
-                    if(this.liked)
-                      this.video.likes--
-                    this.disliked = true
-                    this.liked = false
-                  }
-                }"
-                :class="{'active': this.disliked}"
-                class="toggle-dislike">
-                  <span class="dislike-img-wrapper">
-                    <span class="dislike-img"></span>
-                  </span>
-                  <span class="dislikes">
-                    {{video.dislikes}}
-                  </span> 
-                </button>
+                <div class="like-container">
+                    <button 
+                    @click="like"
+                    :class="{'active': liked}"
+                    class="like-btn">
+                      <span class="like-img-wrapper">
+                        <span class="like-img"></span>
+                      </span>
+                      <span class="likes">
+                        {{this.formatBigNumber(likes)}}
+                      </span>
+                    </button>
+                    <button 
+                    @click="dislike"
+                    :class="{'active': disliked}"
+                    class="dislike-btn">
+                      <span class="dislike-img-wrapper">
+                        <span class="dislike-img"></span>
+                      </span>
+                      <span class="dislikes">
+                        {{this.formatBigNumber(dislikes)}}
+                      </span> 
+                    </button>
+                    <div class="like-bar-wrapper">
+                      <div
+                      :class="{ active: this.liked || this.disliked }"
+                      :style="{ width: this.likesRatio*100+'%' }"
+                      class="like-bar"></div>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
@@ -89,15 +79,60 @@ export default {
     const video = videos.find(video => video.id == this.$route.params.id)
     if (video) {
       this.video = video
-      console.log(this.video)
     }
   },
   methods: {
-    formateWithSpaces(str) {
+    formatWithSpaces: function(str) {
       return String(str).split( /(?=(?:...)*$)/ )
                         .join(' ')
-    }
-  }
+    },
+    like: function() {
+      if (this.liked)
+        this.liked = false
+      else {
+        this.liked = true
+        this.disliked = false
+      }
+    },
+    dislike: function() {
+      if (this.disliked)
+        this.disliked = false
+      else {
+        this.liked = false
+        this.disliked = true
+      }
+    },
+    formatBigNumber: function(number) {
+      let str = number.toString()
+      if (str.length > 6) {
+        let integer = str.substring(0, str.length-6)
+        let decimal = str.substring(str.length-6, str.length-5)
+        return integer +
+               (decimal == '0' ? '' : ',' + decimal) +
+               ' М'
+      }
+      if (str.length > 3) {
+        let integer = str.substring(0, str.length-3)
+        let decimal = str.substring(str.length-3, str.length-2)
+        return integer +
+               (decimal == '0' ? '' : ',' + decimal) +
+               ' ТЫС.'
+      }
+      return str
+    },
+  },
+  computed: {
+    likes: function() {
+      return this.video.likes + this.liked
+    },
+    dislikes: function() {
+      return this.video.dislikes + this.disliked
+    },
+    likesRatio: function() {
+      if (this.likes + this.dislikes == 0) return 0.5 
+      return this.likes / (this.likes + this.dislikes)
+    },
+  },
 }
 
 </script>
@@ -146,15 +181,21 @@ span {
     flex-grow: 1;
   }
 
-  .toggle-like,
-  .toggle-dislike {
+  .like-container {
+    position: relative;
     display: flex;
-    align-items: center;
   }
 
-  .toggle-like {
-    padding-right: 6px;
+  .like-btn,
+  .dislike-btn {
+    display: flex;
+    align-items: center;
 
+    margin-right: 6px;
+    cursor: pointer;
+  }
+
+  .like-btn {
     &.active .like-img {
       background: @endpoint-color;
     }
@@ -163,7 +204,7 @@ span {
     }
   }
 
-  .toggle-dislike {
+  .dislike-btn {
     &.active .dislike-img {
       background: @endpoint-color;
     }
@@ -181,7 +222,7 @@ span {
   .dislike-img {
     height: 24px;
     width: 24px;
-    background: @button-toggled-off;
+    background: @main-secondary-light;
 
     &.active {
       background: @endpoint-color;
@@ -203,12 +244,25 @@ span {
     color: @main-secondary;
   }
 
-  .likes {
+  .like-bar-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
 
+    width: 100%;
+    height: 2px;
+
+    background: @like-bar-empty;
   }
 
-  .dislikes {
+  .like-bar {
+    width: 50%;
+    height: 100%;
+    background: @main-secondary-light;
 
+    &.active {
+      background: @endpoint-color;
+    }
   }
 }
 
