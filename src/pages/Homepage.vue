@@ -10,7 +10,7 @@
           :title="video.title"
           :preview="require('../assets/' + video.preview)"
           :length="video.length"
-          :views="video.views"
+          :views="formatBigNumber(video.views)"
           :dateFromNow="video.dateFromNow"
           :channelTitle="video.channelTitle"
           :channelAvatar="require('../assets/' + video.channelAvatar)"
@@ -38,9 +38,22 @@
         videos
       }
     },
-    created() {
-      for (let video of this.videos)
-        console.log(require('../assets/'+video.preview))
+    methods: {
+        formatBigNumber: function(
+                                number, 
+                                ranksName=['тыс.', 'м', 'млрд']
+                                ) {
+        let str = number.toString()
+
+        for (let ranks = 3; ranks > 0; ranks--) {
+          let rank = ranks*3
+          if (str.length > rank) {
+            let integer = str.substring(0, str.length-rank)
+            return integer + ' ' + ranksName[ranks-1]
+          }
+        }
+        return str
+      },
     }
   }
 </script>

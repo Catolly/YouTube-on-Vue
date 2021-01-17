@@ -102,21 +102,21 @@ export default {
         this.disliked = true
       }
     },
-    formatBigNumber: function(number) {
+    formatBigNumber: function(
+                              number, 
+                              ranksName=['ТЫС.', 'М', 'МЛРД']
+                              ) {
       let str = number.toString()
-      if (str.length > 6) {
-        let integer = str.substring(0, str.length-6)
-        let decimal = str.substring(str.length-6, str.length-5)
-        return integer +
-               (decimal == '0' ? '' : ',' + decimal) +
-               ' М'
-      }
-      if (str.length > 3) {
-        let integer = str.substring(0, str.length-3)
-        let decimal = str.substring(str.length-3, str.length-2)
-        return integer +
-               (decimal == '0' ? '' : ',' + decimal) +
-               ' ТЫС.'
+
+      for (let ranks = 3; ranks > 0; ranks--) {
+        let rank = ranks*3
+        if (str.length > rank) {
+          let integer = str.substring(0, str.length-rank)
+          let decimal = str.substring(str.length-rank, str.length-rank+1)
+          return integer +
+                 (decimal == '0' ? '' : ',' + decimal) +
+                 ' ' + ranksName[ranks-1]
+        }
       }
       return str
     },

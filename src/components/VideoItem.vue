@@ -50,7 +50,7 @@
 			preview: String,
 			title: String,
 			length: String,
-			views: Number,
+			views: String,
 			dateFromNow: String,
 			channelTitle: String,
 			channelAvatar: String,
@@ -136,9 +136,11 @@ h3 {
 
 .video-title {
 	line-height: 1.4em;
+	height: 2.8em;
+	
 	overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 4px;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
 }
 
 .channel-name {
